@@ -19,10 +19,10 @@ SHORT_INTERVAL = 3
 config = {
     'url': 'https://smartcourse.hust.edu.cn/mooc-smartcourse/mooc2-ans/mooc2-ans/mycourse/stu?courseid=17310000019056&clazzid=17310000010770&cpi=17310000137156&enc=3a6de4f059b5aae1803055b41eeb4aa3&t=1741790144317&pageHeader=1&v=0',
     'userData': 'C:\\Users\\15358\\AppData\\Local\\Google\\Chrome\\User Data',
-    'startChapter': 3,
-    'startTask': 1,
-    'endChapter': 7,
-    'endTask': 15,
+    'startChapter': 5,
+    'startTask': 10,
+    'endChapter': 11,
+    'endTask': 10,
 }
 
 chapter_info = {
@@ -210,7 +210,9 @@ class AutoCourse:
         try:
             self.__prepare()
 
-            while self.__current_chapter <= config['endChapter'] and self.__current_task_id <= config['endTask']:
+            while self.__current_chapter < config['endChapter'] or \
+                    (self.__current_chapter == config['endChapter'] and self.__current_task_id <= config['endTask']):
+
                 self.logger.info("-" * 50)
                 self.__find_next_task()
                 self.__current_task = self.__driver.find_element(by=By.XPATH, value="//*[@class='prev_title']").get_attribute('title')
