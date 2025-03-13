@@ -36,6 +36,8 @@ chapter_info = {
     9: 18,
     10: 13,
     11: 10,
+    12: 11,
+    13: 12,
 }
 
 class AutoCourse:
