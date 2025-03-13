@@ -2,11 +2,17 @@
 
 ## 用法
 
+### 依赖
+
+```shell
+pip install selenium
+```
+
 ### 登录设置
 
 1. 首先需要在浏览器中登录课程平台，**确保关闭浏览器再打开后无需重复登录**
 2. 进入到对应课程的`章节`页面，拿到此时的url
-   ![获取url](.\imgs\1.png)
+   ![获取url](imgs/1.png)
 3. （可选）打开一个视频并播放，设置为二倍速和静音。可以避免脚本运行后再设置
 
 ### 参数设置
@@ -29,6 +35,13 @@ config = {
 - startTask：开始小节
 - endChapter：结束章节
 - endTask：结束小节
+
+### 运行
+
+```shell
+cd AutoCourse
+python auto_course.py
+```
 
 ## 不便之处
 
